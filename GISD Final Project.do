@@ -269,4 +269,5 @@ gen h1srh = (h1gh1)
 *WIV
 gen h4srh = (h4gh1)
 
+export excel h4interrace craceww cracewb cracewh cracebb cracebh cracebw cracehh cracehw cracehb rwhite rblack rhis pwhite pblack phisp h4mar16b h4date16b h4coh16b h4age femalew1 h1momeduc  foreignborn h4srh h4discrim h4pss h4dep using "C:\Users\pittman.143\Documents\GISD Class\GISD Repro Final Project.xls", firstrow(variables)
 
