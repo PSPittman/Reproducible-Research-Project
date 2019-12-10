@@ -273,7 +273,12 @@ egen h4pss = rowtotal (h4mh3r h4mh4r h4mh5r h4mh6r), m
 alpha h4mh3r h4mh4r h4mh5r h4mh6r if h4pss != . 
 
 *DISCRIMINATION @ W4
-clonevar h4discrim = h4mh28 if h4mh28 <=3
+gen h4discrim = .
+replace h4discrim=0 if h4mh28==0
+replace h4discrim=1 if h4mh28==1
+replace h4discrim=2 if h4mh28==2
+replace h4discrim=3 if h4mh28==3
+
 
 *Self-Rated Health
 *WI
