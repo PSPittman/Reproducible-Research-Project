@@ -197,6 +197,7 @@ replace cracehw = 1 if rhisp==1 & pwhite==1
 gen cracehb=. //hisp r, black p
 replace cracehb = 1 if rhisp==1 & pblack==1
 
+
 drop if craceww ==. & cracewb ==. & cracewh ==. & cracebb ==. & cracebw ==. & cracebh ==. & cracehh ==. & cracehw ==. & cracehb ==.
 replace craceww=0 if craceww!=1
 replace cracewb=0 if cracewb!=1
@@ -207,6 +208,17 @@ replace cracebh=0 if cracebh!=1
 replace cracehh=0 if cracehh!=1
 replace cracehw=0 if cracehw!=1
 replace cracehb=0 if cracehb!=1
+
+gen crace =.
+replace crace=1 if craceww==1
+replace crace=2 if cracewb==1
+replace crace=3 if cracewh==1
+replace crace=4 if cracebb==1
+replace crace=5 if cracebw==1
+replace crace=6 if cracebh==1
+replace crace=7 if cracehh==1
+replace crace=8 if cracehw==1
+replace crace=9 if cracehb==1
 
 **
 gen h4interrace=.
@@ -269,5 +281,5 @@ gen h1srh = (h1gh1)
 *WIV
 gen h4srh = (h4gh1)
 
-export excel h4interrace craceww cracewb cracewh cracebb cracebh cracebw cracehh cracehw cracehb rwhite rblack rhis pwhite pblack phisp h4mar16b h4date16b h4coh16b h4age femalew1 h1momeduc  foreignborn h4srh h4discrim h4pss h4dep using "C:\Users\pittman.143\Documents\GISD Class\GISD Repro Final Project.xls", firstrow(variables)
+export excel h4interrace craceww cracewb cracewh cracebb cracebh cracebw cracehh cracehw cracehb rwhite rblack rhisp pwhite pblack phisp crace h4mar16b h4date16b h4coh16b h4age femalew1 h1momeduc foreignborn h4srh h4discrim h4pss h4dep using "C:\Users\pittman.143\Documents\GISD Class\GISD Repro Final Project.xls", firstrow(variables)
 
